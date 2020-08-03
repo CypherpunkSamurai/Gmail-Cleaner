@@ -30,3 +30,8 @@ jobs:
         with:
           name: Comliled Source Binaries
           path: ./dist/
+      - name: Archive Release
+        uses: thedoctor0/zip-release@master
+        with:
+          filename: 'release.zip'
+          path: ./dist/

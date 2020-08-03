@@ -26,12 +26,10 @@ jobs:
       - name: Pyinstaller build console background bin
         run: pyinstaller --onefile --noconsole -p . run.py
 
+      - name: Archive Release
+        run: tar.exe -a -c -f release.zip ./dist/*
+
       - uses: actions/upload-artifact@v2
         with:
           name: Comliled Source Binaries
-          path: ./dist/
-      - name: Archive Release
-        uses: thedoctor0/zip-release@master
-        with:
-          filename: 'release.zip'
-          path: ./dist/
+          path: release.zip

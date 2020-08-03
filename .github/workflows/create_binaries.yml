@@ -21,10 +21,10 @@ jobs:
         run: pip3 install pyinstaller
 
       - name: Pyinstaller build console binary
-        run: pyinstaller --onefile -p . wizard.py
+        run: pyinstaller --onefile -p ./ wizard.py
 
       - name: Pyinstaller build console background bin
-        run: pyinstaller --onefile --noconsole -p . run.py
+        run: pyinstaller --onefile --noconsole -p ./ run.py
 
       - name: Archive Release
         run: tar.exe -a -c -f release.zip ./dist/*
